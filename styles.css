@@ -15,12 +15,19 @@
     --OLD-GOLD-HIGHLIGHT: #fde98e;
 
     /* SIZES */
+    --TINY: 10px;
     --SMALL: 14px;
     --MEDIUM: 18px;
     --BIG: 24px;
     --LARGE: 32px;
     --XLARGE: 48px;
     --XXL: 64px;
+
+    /* TRANSITIONS */
+    --FAST: 0.1s;
+    --MEDIUM-TRANSITION: 0.3s;
+    --SLOW: 0.5s;
+    --SLOWER: 1s;
 }
 
 
@@ -146,7 +153,74 @@ p {
     display: none;
 }
 
-.socials {
+.content div a {
+    padding: var(--TINY) var(--LARGE);
+    font-size: var(--MEDIUM);
+    font-weight: 300;
+    background-color: var(--REBECCA-PURPLE);
+    color: var(--OlD-GOLD);
+    border: none;
+    cursor: pointer;
+    transition: var(--MEDIUM-TRANSITION);
+}
+
+.content div a:hover {
+    background-color: var(--RUSSIAN-VIOLET);
+    color: var(--OLD-GOLD-HIGHLIGHT);
+}
+
+.projectSection {
+    display: flex;
+    flex-direction: row;
+    gap: var(--LARGE);
+    height: max-content;
+}
+
+.projectSection .panel {
+    background-color: var(--REBECCA-PURPLE);
+    padding: var(--MEDIUM);
+    border-radius: var(--SMALL);
+}
+
+.projectSection img {
+    min-width: 50%;
+    background-size: cover;
+}
+
+.projectSection div {
+    min-width: 50%;
+}
+
+.projectSection hr {
+    width: 100%;
+    height: 5px;
+    background-color: var(--LICORITE);
+}
+
+.projectSection .panel ul {
+    padding-left: var(--BIG);
+}
+
+.projectSection .panel ul li {
+    font-size: var(--BIG);
+}
+
+b {
+    display: block;
+    padding: var(--SMALL) 0;
+    font-size: var(--BIG);
+    color: var(--OlD-GOLD);
+}
+
+.gameShowcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--LARGE);
+    margin-top: var(--LARGE);
+}
+
+.row-display {
     display: flex;
     flex-direction: column;
     gap: var(--BIG);
@@ -155,13 +229,13 @@ p {
     list-style: none;
 }
 
-.social-container {
+.icon-container {
     width: 128px;
     height: 128px;
     border-radius: 50%;
 }
 
-.social-container a {
+.icon-container a {
     position: relative;
     bottom: 100%;
     display: block;
@@ -171,7 +245,7 @@ p {
 
 }
 
-.social-container img {
+.icon-container img {
     width: 100%;
     height: 100%;
 }
@@ -198,10 +272,18 @@ footer {
 
     .content{
         flex-direction: row;
+        height: auto;
     }
 
     .content p {
-        max-width: 50%;
+        max-width: 100%;
+    }
+
+    .content div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--LARGE);
     }
 
     .content hr {
@@ -224,7 +306,7 @@ footer {
         width: 70%;
     }
 
-    .socials {
+    .row-display {
         flex-direction: row;
     }
 
